@@ -12,7 +12,7 @@ WHERE `cfu` > 10;
 --- Selezionare gli studenti che hanno più di 30 anni
 SELECT *
 FROM `students`
-WHERE 2022 - YEAR(date_of_birth) > 30;
+WHERE YEAR(CURDATE()) - YEAR(date_of_birth) > 30;
 
 --- Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea
 SELECT * 
