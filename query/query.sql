@@ -16,4 +16,5 @@ WHERE 2022 - YEAR(date_of_birth) > 30;
 --- Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea
 SELECT * 
 FROM `courses`
-WHERE `period` = 'I Semestre';
+WHERE `period` = 'I Semestre'
+AND `year` = 1;
