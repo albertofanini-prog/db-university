@@ -29,3 +29,10 @@ AND `year` = 1;
 SELECT *
 FROM `degrees`
 WHERE `level` = 'magistrale';
+
+--- Da quanti dipartimenti è composta l'università?
+
+--- Quanti sono gli insegnanti che non hanno un numero di telefono?
+SELECT *
+FROM `teachers`
+WHERE `phone` IS NULL;
