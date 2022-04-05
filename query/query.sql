@@ -1,3 +1,4 @@
+---
 --- Selezionare tutti gli studenti nati nel 1990
 SELECT *
 FROM `students`
@@ -39,3 +40,4 @@ FROM `departments`;
 SELECT *
 FROM `teachers`
 WHERE `phone` IS NULL;
+---
