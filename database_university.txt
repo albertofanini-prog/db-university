@@ -4,12 +4,12 @@ SELECT *
 FROM `students`
 WHERE YEAR (`date_of_birth`) = 1990;
 
---- Selezionare tutti i corsi che valgono pi√π di 10 crediti
+--- Selezionare tutti i corsi che valgono pi˘ di 10 crediti
 SELECT *
 FROM `courses`
 WHERE `cfu` > 10;
 
---- Selezionare gli studenti che hanno pi√π di 30 anni
+--- Selezionare gli studenti che hanno pi˘ di 30 anni
 SELECT *
 FROM `students`
 WHERE YEAR(CURDATE()) - YEAR(date_of_birth) > 30;
@@ -31,7 +31,7 @@ SELECT *
 FROM `degrees`
 WHERE `level` = 'magistrale';
 
---- Da quanti dipartimenti √® composta l'universit√†?
+--- Da quanti dipartimenti Ë composta l'universit‡?
 SELECT COUNT(*) AS `numero_dipartimenti`
 FROM `departments`;
 
@@ -40,3 +40,4 @@ SELECT *
 FROM `teachers`
 WHERE `phone` IS NULL;
 ---
+
