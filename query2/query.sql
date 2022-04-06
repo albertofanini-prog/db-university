@@ -7,4 +7,9 @@ GROUP BY(`enr`);
 --- Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 SELECT (`office_address`), COUNT(*) AS `teachers_here`
 FROM `teachers`
-GROUP BY `office_address`
+GROUP BY `office_address`;
+
+--- Calcolare la media dei voti di ogni appello d'esame
+SELECT (`exam_id`), AVG(`vote`) AS `media`
+FROM `exam_student`
+GROUP BY (`exam_id`)
