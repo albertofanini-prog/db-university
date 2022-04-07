@@ -30,7 +30,7 @@ JOIN `degrees` AS `deg`
 ON `s`.`degree_id` = `deg`.`id`
 JOIN `departments` AS `dep`
 ON `deg`.`department_id` = `dep`.`id`
-ORDER BY `s`.`surname`, `s`.`name`
+ORDER BY `s`.`surname`, `s`.`name`;
 
 --- Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 SELECT `d`.`id`, `d`.`name` AS `degree_name`, `c`.`name` AS `course_name`, `t`.`name`, `t`.`surname`
@@ -41,7 +41,7 @@ JOIN `course_teacher` AS `ct`
 ON `ct`.`course_id` = `c`.`id`
 JOIN `teachers` AS `t`
 ON `t`.`id` = `ct`.
-ON `t`.`id` = `ct`.`teacher_id`
+ON `t`.`id` = `ct`.`teacher_id`;
 
 --- Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica
 SELECT `dep`.`name` AS `dep_name`, `t`.*
@@ -54,4 +54,16 @@ JOIN `course_teacher` AS `ct`
 ON `ct`.`course_id` = `c`.`id`
 JOIN `teachers` AS `t`
 ON `t`.`id` = `ct`.`teacher_id`
-WHERE `dep`.`name` = 'Dipartimento di MAtematica'
+WHERE `dep`.`name` = 'Dipartimento di MAtematica';
+
+--- BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per
+--- superare ciascuno dei suoi esami
+SELECT `c`.`name`, AVG(`es`.`vote`)
+FROM `students` AS `s`
+JOIN `exam_student` AS `es`
+ON `es`.`student_id` = `s`.`id`
+JOIN `exams` AS `e`
+ON `es`.`exam_id` = `e`.`id`
+JOIN `courses` AS `c`
+ON `c`.`id` = `e`.`course_id`
+GROUP BY `c`.`id`;
